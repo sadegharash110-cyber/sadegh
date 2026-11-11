@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت هکری من</title>
+    <style>
+        /* اینجا بخش ظاهر (CSS) است */
+        body {
+            background-color: #0a0a0a;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* افکت چشمک زدن متن */
+        .typing {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ffcc;
+            border-right: 3px solid #00ffcc;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #00ffcc; }
+        }
+
+        .info-box {
+            border: 2px solid #00ffcc;
+            padding: 20px 40px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+            text-align: center;
+        }
+
+        button {
+            background-color: transparent;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        button:hover {
+            background-color: #00ffcc;
+            color: #0a0a0a;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="typing">HELLO WORLD</div>
+
+    <div class="info-box">
+        <h2>خوش آمدید به پایگاه من</h2>
+        <p>من یک برنامه‌نویس و هکر کلاه‌سفید هستم.</p>
+        <p>هدف من محافظت از امنیت سایبری ایران است. 🇮🇷</p>
+        
+        <button onclick="showMessage()">کلیک کن!</button>
+    </div>
+
+    <script>
+        // اینجا بخش منطق (JavaScript) است
+                function showMessage() {
+            // تغییر رنگ پس‌زمینه به قرمز تیره
+            document.body.style.backgroundColor = "#330000";
+            // تغییر رنگ متن‌ها به قرمز روشن
+            document.body.style.color = "#ff0000";
+            
+            // تغییر متن دکمه
+            document.querySelector("button").innerText = "SYSTEM BREACHED! 🚨";
+            
+            // نمایش پیام هکری
+            alert("⚠️ هشدار! اطلاعات شما در حال کپی شدن است... ");
+            alert("نباید روی همه جاکلیک کنی چون الان هک شدی و بیچاره")
+            
+            // یک افکت چشمک زدن برای کل صفحه
+            let count = 0;
+            let interval = setInterval(function() {
+                if (count % 2 === 0) {
+                    document.body.style.backgroundColor = "#000000";
+                } else {
+                    document.body.style.backgroundColor = "#330000";
+                }
+                count++;
+                if (count > 10) { // بعد از ۱۰ بار چشمک زدن متوقف میشه
+                    clearInterval(interval);
+                    document.body.style.backgroundColor = "#0a0a0a"; // برگشت به حالت اول
+                    document.body.style.color = "#00ffcc";
+                    document.querySelector("button").innerText = "کلیک کن!";
+                }
+            }, 300); // هر ۳۰۰ میلی‌ثانیه یکبار رنگ عوض میشه
+        }</script>
+
+</body>
+</html>
